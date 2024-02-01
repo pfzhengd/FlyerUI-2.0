@@ -1,0 +1,173 @@
+
+@import "../../../styles/base/bem.scss";
+@import "../../../styles/base/var.scss";
+$input-clear-area:16px !default;
+
+@mixin fix-variant($padding,$fontSize){
+    padding:$padding;
+    i[class^='fly-icon']{
+        font-size:$fontSize;
+        display: inline-flex;
+        justify-content: center;
+        align-items:center;
+    }
+}
+
+@mixin native-variant($padding,$fontSize,$borderRadius,$paddingRight,$paddingLeft){
+    padding:$padding;
+    font-size:$fontSize;
+    @include state('round'){
+        border-radius:$borderRadius;
+    }
+    @include state("suffix"){
+        padding-right:$paddingRight;
+    }
+    @include state("prefix"){
+        padding-left:$paddingLeft;
+    }
+}
+
+@include b('input'){
+    position: relative;
+    display: inline-flex;
+    font-size:$font-text-size;
+    line-height: 1.3;
+    @include e('native'){
+        outline: none;
+        border:1px solid $color-border;
+        border-radius: $round-default-size;
+        box-sizing: border-box;
+        color:$font-color-common;
+        font-weight:400;
+        width:100%;
+        &:focus{
+            border-color:$primary-color;
+        }
+        @include state("disabled"){
+            color:$font-color-secondary;
+            background: mix($color-border,$white,50%);
+            border-color:mix($color-border,$white,90%);
+            cursor:not-allowed;
+        }
+        @include state("prepend"){
+            border-top-left-radius:0px;
+            border-bottom-left-radius: 0px;
+        }
+        @include state("append"){
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        
+        @include m('large'){
+            height:56px;
+            @include native-variant(15px, 
+                                    $font-title-size,
+                                    24px ,
+                                    46px , 
+                                    46px)
+        }
+        @include m('medium'){
+            height:40px;
+            @include native-variant($default-padding, 
+                                    $font-text-size,
+                                    18px ,
+                                    31px , 
+                                    31px)
+        }
+        @include m('small'){
+            height:24px;
+            @include native-variant(5px, 
+                                    $font-assist_text-size,
+                                    12px ,
+                                    21px , 
+                                    21px)
+        }
+    }
+    @include e('clear'){
+        position: absolute;
+        display: block;
+        z-index: 1;
+        border-radius: 50%;
+        width: $input-clear-area;
+        height: $input-clear-area;
+        right:12px;
+        top: 12px;
+        cursor: pointer;
+        font-style:inherit;
+        color:$font-color-placeholder;
+        background-color:$color-border;
+        text-align: center;
+        opacity: .6;
+        font-size:12px;
+        pointer-events:all;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    @include e('eye'){
+        position: absolute;
+        display: flex;
+        z-index: 1;
+        border-radius: 50%;
+        width: $input-clear-area;
+        height: $input-clear-area;
+        right:11px;
+        top: 11px;
+        cursor: pointer;
+        font-style:inherit;
+        color:$font-color-placeholder;
+        justify-content: center;
+        align-items: center;
+        opacity: .6;
+        font-size:16px;
+        pointer-events:all;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    @include e('prefix'){
+        @extend .fix;
+        left:0px;
+        @include m('small'){
+            @include fix-variant(2px 8px,11px)
+        }
+        @include m('medium'){
+            @include fix-variant(10px,18px)
+        }
+        @include m('large'){
+            @include fix-variant(18px,21px)
+        }
+    }
+    @include e('suffix'){
+        @extend .fix;
+        right:0px;
+        @include m('small'){
+            @include fix-variant(2px 8px,11px)
+        }
+        @include m('medium'){
+            @include fix-variant(10px,18px)
+        }
+        @include m('large'){
+            @include fix-variant(18px,21px)
+        }
+    }
+    @include e('prepend'){
+        @extend .adorn;
+    }
+    @include e('append'){
+        @extend .adorn;
+    }
+
+    .fix{
+        position: absolute;
+        z-index:99;
+        top:0px;
+        bottom: 0px;
+        line-height:20px;
+        color:$font-color-secondary;
+    }
+    .adorn{
+        background: $color-border;
+        padding:$default-padding;
+    }
+}
