@@ -1,6 +1,6 @@
 {
-    "name": "NimbleUI",
-    "version": "0.0.0",
+    "name": "flyer-ui",
+    "version": "1.10.13",
     "description": "UI组件库",
     "main": "lib/main/index.js",
     "types": "lib/types/index.d.ts",
