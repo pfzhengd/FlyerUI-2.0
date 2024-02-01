@@ -24,7 +24,7 @@ const { logger } = require('./utils');
   function buildPackage () {
     return new Promise((resolve, reject) => {
       logger.info('开始构建包。。。')
-      exec('npx rollup -c', (err) => {
+      exec('npx rollup -c --bundleConfigAsCjs', (err) => {
         if (err) {
           logger.error('构建包出现了错误 ', err)
           reject(err)

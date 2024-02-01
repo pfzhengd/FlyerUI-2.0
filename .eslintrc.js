@@ -3,10 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'standard',
-    'plugin:vue/vue3-recommended'
-  ],
+  extends: ['standard', 'plugin:vue/vue3-recommended', 'plugin:storybook/recommended'],
   parser: 'vue-eslint-parser', // 使用 vue-eslint-parser 作为主解析器
   parserOptions: {
     parser: '@typescript-eslint/parser', // 在 parserOptions 中指定 TypeScript 的解析器

@@ -1,43 +1,82 @@
+@function mixColor($color,$number){
+  @return mix($color,$white,$number);
+}
 //定义基色
-$primary:#1A084D;
-$success:#65A30D;
-$warning:#FB923C;
-$highWaring:#FEF08A;
+$primary:#007BFF;
+$success:#28A745;
+$warning:#FFD836;
 $danger:#EC6A6F;
-$blue:#0EA5E9;
+$info:#17A2B8;
 $default:#444444;
-$deepPurple:#019a45;
-$purple:#7C3AED;
-$coolWhite:#E3E5E5;
-$yellow:#fdba74;
-$deepYellow:#FCD34D;
 
 //调和色
-$white:#FAFAFA;
-$plainWhite:#FFFFFF;
+$white:#FFFFFF;
 
-$holdplace:rgba(255, 255, 255, 0.7);
+//主要颜色
+$primary-color:mixColor($primary,90%);
+$primary-active-color:$primary;
+$primary-hover-color:mixColor($primary,80%);
+$primary-bg-color:mixColor($primary,10%);
 
-$font-common-largest-title-size:28px;
-$font-common-large-title-size:24px;
-$font-common-title-size:20px;
-$font-common-middle-size:18px;
-$font-common-mini-title-size:16px;
-$font-common-mini-size:12px;
-$font-common-smallest-size:11px;
-$font-common-text-size:14px;
+//辅助色
+$default-color:mixColor($default,90%);
+$default-active-color:$default;
+$default-hover-color:mixColor($default,80%);
+$default-bg-color:mixColor($default,10%);
+
+$success-color:mixColor($success,90%);
+$success-active-color:$success;
+$success-hover-color:mixColor($success,80%);
+$success-bg-color:mixColor($success,10%);
+
+$info-color:mixColor($info,90%);
+$info-active-color:$info;
+$info-hover-color:mixColor($info,80%);
+$info-bg-color:mixColor($info,10%);
+
+$warning-color:mixColor($warning,90%);
+$warning-active-color:$warning;
+$warning-hover-color:mixColor($warning,80%);
+$warning-bg-color:mixColor($warning,10%);
+
+$danger-color:mixColor($danger,90%);
+$danger-active-color:$danger;
+$danger-hover-color:mixColor($danger,80%);
+$danger-bg-color:mixColor($danger,10%);
+
+//中性色(文本颜色)
+$font-color-title:mixColor($default,90%);
+$font-color-common:mixColor($default,70%);
+$font-color-secondary:mixColor($default,50%);;
+$font-color-placeholder:mixColor($default,30%);;
 
 
-$common-border:0.05px solid #E3E5E5;
+//主要边框颜色
+$color-border:#E4EAEC;
 
-$common-fill-distance:0.75px;
+//字体大小规格
+$font-big-size:20px;
+$font-title-size:18px;
+$font-mini_title-size:16px;
+$font-text-size:14px;
+$font-mini_text-size:13px;
+$font-assist_text-size:12px;
 
-$background-color:#110806;
+//通用白色
+$common-white:#fff;
 
-$common-text-color:rgba(255, 255, 255, 0.5);
+//默认圆角大小
+$round-default-size:3px;
 
-$common-line-height:1.3;
+// 默认内填度
+$default-padding:10px;
 
-$common-border-radius:1.6px;
 
-$font-family:Arial、Helvetica、Verdana;
+// 全局背景颜色
+$global-background-color:#F7FAFD;
+
+// 默认阴影
+$default-box-shadow:1px 1px 10px rgba($color-border,0.5);
+
+//禁用背影色
+$default-disabled:#F5F7FA;

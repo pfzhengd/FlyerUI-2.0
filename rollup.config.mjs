@@ -1,15 +1,12 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import dts from 'rollup-plugin-dts'
+import { dts } from 'rollup-plugin-dts'
 import JSON from '@rollup/plugin-json'
 import typescript from '@rollup/plugin-typescript'
 import terser from '@rollup/plugin-terser'
 import alias from '@rollup/plugin-alias'
 import vuePlugin from 'rollup-plugin-vue'
 import ts from 'typescript'
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
-import html from 'rollup-plugin-html2'
 import rollupPostcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
@@ -17,6 +14,8 @@ import sass from 'sass'
 import pxtorem from 'postcss-pxtorem'
 import copy from 'rollup-plugin-copy'
 import nodePolyfills from 'rollup-plugin-node-polyfills'
+import fse from 'fs-extra'
+import path from 'path'
 
 function getPlugins () {
   return [
@@ -103,11 +102,23 @@ function genRollupConfig (module) {
   }
 }
 
-const moduleNames = [{
-  name: 'Index',
+function getCompoents () {
+  const components = fse.readdirSync(path.resolve(__dirname, './src/components'))
+  return components.map((component) => {
+    return {
+      name: component,
+      input: `components/${component}/index.ts`,
+      output: `components/${component}/index.js`
+    }
+  })
+}
+
+const moduleNames = getCompoents()
+moduleNames.push({
+  name: 'index',
   input: 'index.ts',
   output: 'index.js'
-}]
+})
 
 export default () => {
   const config = moduleNames.map((module) => {
@@ -132,26 +143,6 @@ export default () => {
         format: 'es'
       }],
       plugins: [dts()]
-    })
-  } else {
-    config.forEach((val) => {
-      if (val.input.includes('index.ts')) {
-        const plugins = [
-          serve({
-            open: false, // 在服务器启动时自动在浏览器中打开应用
-            contentBase: ['lib'], // 服务器从哪个文件夹提供内容
-            host: '127.0.0.1',
-            port: 4000 // 服务器端口号
-          }),
-          livereload('lib'), // 如果您希望使用实时重载
-          html({
-            template: 'src/public/index.html', // 模板文件路径
-            fileName: 'index.html', // 生成的文件名称
-            onlinePath: '.'
-          })
-        ]
-        val.plugins.push(...plugins)
-      }
     })
   }
 

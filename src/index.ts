@@ -1,5 +1,17 @@
-import { createApp } from 'vue'
-import component from './components/index.vue'
+import Button from './components/button'
+import { version } from '../package.json'
 
-const app = createApp(component)
-app.mount('#root')
+const components = [
+  Button
+]
+
+if (typeof window !== 'undefined' && window.Vue) {
+  components.forEach(component => {
+    window.Vue.component(component.name, component)
+  })
+}
+
+export default {
+  Version: version,
+  ...components
+}

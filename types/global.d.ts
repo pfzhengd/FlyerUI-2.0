@@ -1,5 +1,6 @@
 interface Window {
   Vue: {
-    version: string
+    version: string,
+    component: (name: string, component: any) => void
   }
 }
