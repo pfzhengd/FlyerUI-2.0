@@ -19,6 +19,14 @@
     "publish:major": "npm version major && npm run build:prod && node ./build-changelog.js && git push origin --tags",
     "build-storybook": "storybook build"
   },
+  "homepage": "https://github.com/pfzhengd/FlyerUI-2.0",
+  "bugs": {
+    "url": "https://github.com/pfzhengd/FlyerUI-2.0/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfzhengd/FlyerUI-2.0.git"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
