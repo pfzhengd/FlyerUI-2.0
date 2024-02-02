@@ -1,0 +1,30 @@
+@import "../../../styles/base/index.scss";
+@include b('alert'){
+    position: relative;
+    padding:10px;
+    border-radius: $round-default-size;
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        top:$default-padding;
+        right:$default-padding;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+    @include m('success'){
+        background: $success-bg;
+        color:$success;
+    }
+    @include m('warning'){
+        background: $warning-bg;
+        color:$warning;
+    }
+    @include m('info'){
+        background: $info-bg;
+        color:$info;
+    }
+    @include m('danger'){
+        background: $danger-bg;
+        color:$danger;
+    }
+}
