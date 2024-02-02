@@ -17,13 +17,11 @@ const components = [
   Checkbox
 ]
 
-if (typeof window !== 'undefined' && window.Vue) {
-  components.forEach(component => {
-    window.Vue.component(component.name, component)
-  })
-}
-
 export default {
-  Version: version,
-  ...components
+  version,
+  install: (app: any) => {
+    components.forEach(component => {
+      app.component(component.name, component)
+    })
+  }
 }
