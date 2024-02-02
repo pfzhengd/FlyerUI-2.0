@@ -1,5 +1,4 @@
-@import "../../../styles/base/bem.scss";
-@import "../../../styles/base/var.scss";
+@import "../../../styles/base/index.scss";
 @mixin button-plain($color,$background-color,$border-color,$varint-color){
     background-color:$background-color;
     color:$color;
@@ -157,38 +156,36 @@
     }
 
     @include m('default'){
-        $mixDefault:mix($color-border,$white,90%);
-        $mixBG:mix($color-border,$white,50%);
-        @include button-variant($default,$mixBG,$mixDefault,$mixDefault,$mixDefault);
+        @include button-variant($default,$default-bg,$color-border,$default-bg,$default-bg);
         @include state('plain'){
-            @include button-plain($default,$white,$mixBG,$mixDefault);
+            @include button-plain($default,$white,$color-border,$default-hover);
             &:hover{
-                background-color:mix($color-border,$white,90%);
-                border-color:mix($color-border,$white,90%);
+                background-color:$color-border;
+                border-color:$color-border;
                 color:$default;
             }
             &:active,&:focus {
-                background-color:mix($color-border,$white,90%);
-                border-color:mix($color-border,$white,90%);
+                background-color:$color-border;
+                border-color:$color-border;
                 color:$default;
             }
         }
     }
 
     @include m('primary'){
-        @include button-variant($white,$primary-color,$primary-color,$primary-hover-color,$primary-active-color);
+        @include button-variant($white,$primary,$primary,$primary-hover,$primary-active);
     }
     @include m('success'){
-        @include button-variant($white,$success-color,$success-color,$success-hover-color,$success-active-color);
+        @include button-variant($white,$success,$success,$success-hover,$success-active);
     }
     @include m('info'){
-        @include button-variant($white,$info-color,$info-color,$info-hover-color,$info-active-color);
+        @include button-variant($white,$info,$info,$info-hover,$info-active);
     }
     @include m('warning'){
-        @include button-variant($white,$warning-color,$warning-color,$warning-hover-color,$warning-active-color);
+        @include button-variant($white,$warning,$warning,$warning-hover,$warning-active);
     }
     @include m('danger'){
-        @include button-variant($white,$danger-color,$danger-color,$danger-hover-color,$danger-active-color);
+        @include button-variant($white,$danger,$danger,$danger-hover,$danger-active);
     }
 
     @include e('icon'){

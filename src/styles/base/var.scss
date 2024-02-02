@@ -1,58 +1,49 @@
-@function mixColor($color,$number){
-  @return mix($color,$white,$number);
-}
 //定义基色
-$primary:#007BFF;
-$success:#28A745;
-$warning:#FFD836;
-$danger:#EC6A6F;
-$info:#17A2B8;
-$default:#444444;
-
-//调和色
-$white:#FFFFFF;
 
 //主要颜色
-$primary-color:mixColor($primary,90%);
-$primary-active-color:$primary;
-$primary-hover-color:mixColor($primary,80%);
-$primary-bg-color:mixColor($primary,10%);
+$primary:var(--primary);
+$primary-hover:var(--primary-hover);
+$primary-active:var(--primary-active);
+$primary-bg:var(--primary-bg);
 
 //辅助色
-$default-color:mixColor($default,90%);
-$default-active-color:$default;
-$default-hover-color:mixColor($default,80%);
-$default-bg-color:mixColor($default,10%);
+$success:var(--success);
+$success-hover:var(--success-hover);
+$success-active:var(--success-active);
+$success-bg:var(--success-bg);
 
-$success-color:mixColor($success,90%);
-$success-active-color:$success;
-$success-hover-color:mixColor($success,80%);
-$success-bg-color:mixColor($success,10%);
+$warning:var(--warning);
+$warning-hover:var(--warning-hover);
+$warning-active:var(--warning-active);
+$warning-bg:var(--warning-bg);
 
-$info-color:mixColor($info,90%);
-$info-active-color:$info;
-$info-hover-color:mixColor($info,80%);
-$info-bg-color:mixColor($info,10%);
+$danger:var(--danger);
+$danger-hover:var(--danger-hover);
+$danger-active:var(--danger-active);
+$danger-bg:var(--danger-bg);
 
-$warning-color:mixColor($warning,90%);
-$warning-active-color:$warning;
-$warning-hover-color:mixColor($warning,80%);
-$warning-bg-color:mixColor($warning,10%);
+$info:var(--info);
+$info-hover:var(--info-hover);
+$info-active:var(--info-active);
+$info-bg:var(--info-bg);
 
-$danger-color:mixColor($danger,90%);
-$danger-active-color:$danger;
-$danger-hover-color:mixColor($danger,80%);
-$danger-bg-color:mixColor($danger,10%);
+$default:var(--default);
+$default-hover:var(--default-hover);
+$default-active:var(--default-active);
+$default-bg:var(--default-bg);
+
+//调和色
+$white:var(--white);
 
 //中性色(文本颜色)
-$font-color-title:mixColor($default,90%);
-$font-color-common:mixColor($default,70%);
-$font-color-secondary:mixColor($default,50%);;
-$font-color-placeholder:mixColor($default,30%);;
+$font-color-title:rgba($default,0.9);
+$font-color-common:rgba($default,0.8);
+$font-color-secondary:rgba($default,0.6);
+$font-color-placeholder:rgba($default,0.4);
 
 
 //主要边框颜色
-$color-border:#E4EAEC;
+$color-border:var(--color-border);
 
 //字体大小规格
 $font-big-size:20px;
@@ -63,20 +54,20 @@ $font-mini_text-size:13px;
 $font-assist_text-size:12px;
 
 //通用白色
-$common-white:#fff;
+$common-white:var(--common-white);
 
 //默认圆角大小
-$round-default-size:3px;
+$round-default-size:5px;
 
 // 默认内填度
 $default-padding:10px;
 
 
 // 全局背景颜色
-$global-background-color:#F7FAFD;
+$global-background-color:var(--default-background);
 
 // 默认阴影
-$default-box-shadow:1px 1px 10px rgba($color-border,0.5);
+$default-box-shadow:1px 1px 10px $color-border;
 
 //禁用背影色
-$default-disabled:#F5F7FA;
+$default-disabled:var(--default-disabled);

@@ -1,6 +1,5 @@
 
-@import "../../../styles/base/bem.scss";
-@import "../../../styles/base/var.scss";
+@import "../../../styles/base/index.scss";
 $input-clear-area:16px !default;
 
 @mixin fix-variant($padding,$fontSize){
@@ -41,12 +40,12 @@ $input-clear-area:16px !default;
         font-weight:400;
         width:100%;
         &:focus{
-            border-color:$primary-color;
+            border-color:$primary;
         }
         @include state("disabled"){
             color:$font-color-secondary;
-            background: mix($color-border,$white,50%);
-            border-color:mix($color-border,$white,90%);
+            background: rgba($color-border,$white,50%);
+            border-color:rgba($color-border,$white,90%);
             cursor:not-allowed;
         }
         @include state("prepend"){
