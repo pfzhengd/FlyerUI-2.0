@@ -1,0 +1,22 @@
+
+@import "../../../styles/base/index.scss";
+@include b('card'){
+    position: relative;
+    border-radius: $round-default-size;
+    padding:10px;
+    box-sizing: border-box;
+    box-shadow:$default-box-shadow;
+    background-color:$common-white;
+    @include e('header'){
+        border-bottom: 1px solid $color-border;
+        padding:$default-padding;
+        font-size:$font-title-size;
+    }
+    @include e('body'){
+        padding:$default-padding;
+    }
+    @include e('footer'){
+        border-top: 1px solid $color-border;
+        padding:$default-padding;
+    }
+}
