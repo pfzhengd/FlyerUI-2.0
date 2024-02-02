@@ -1,8 +1,16 @@
 import Button from './components/button'
+import ButtonGroup from './components/button-group'
+import Input from './components/input'
+import Alert from './components/alert'
+import Card from './components/card'
 import { version } from '../package.json'
 
 const components = [
-  Button
+  Button,
+  ButtonGroup,
+  Input,
+  Alert,
+  Card
 ]
 
 if (typeof window !== 'undefined' && window.Vue) {
