@@ -28,11 +28,12 @@ export const Primary: Story = {
     <div>
       <Input placeholder="请输入内容" @change="onChange" v-model="value"></Input>&nbsp;
       <Input placeholder="请输入内容" round></Input>
+      {{ value }}
     </div>
     `,
     methods: {
       onChange (e: any) {
-        console.log(e)
+        console.log(e, this.value)
       }
     }
   })
