@@ -1,0 +1,21 @@
+.bg-row {
+  background: #fafafa;
+  line-height: 32px;
+  height: 32px;
+  margin-bottom: 10px;
+  width:100%;
+}
+.bg-col-first {
+  background: #526069;
+  border-radius: 2px;
+  display: block;
+  width:100%;
+  height:100%;
+}
+.bg-col-second {
+  background: #a3afb7;
+  border-radius: 2px;
+  display: block;
+  width:100%;
+  height:100%;
+}
