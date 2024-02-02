@@ -11,8 +11,8 @@
 推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用
 
 ```JS
-npm i flyer-ui -S 
-npm install flyer-ui -S
+npm i @flyer-ui/next
+npm install @flyer-ui/next
 ```
 ### CDN 引用方式
 

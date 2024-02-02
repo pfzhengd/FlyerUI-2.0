@@ -3,6 +3,8 @@
   "version": "0.0.2",
   "description": "UI组件库",
   "main": "lib/index.js",
+  "unpkg": "lib/index.js",
+  "style": "lib/index.css",
   "types": "lib/types/index.d.ts",
   "scripts": {
     "uppkg": "npx ncu -u",
