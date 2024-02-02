@@ -1,7 +1,7 @@
-import Input from './main/index.vue'
+import Card from './main/index.vue'
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component('Input', Input)
+  window.Vue.component('Input', Card)
 }
 
-export default Input
+export default Card

@@ -1,7 +1,7 @@
-import Button from './main/index.vue'
+import ButtonGroup from './main/index.vue'
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component('Button', Button)
+  window.Vue.component('ButtonGroup', ButtonGroup)
 }
 
-export default Button
+export default ButtonGroup
