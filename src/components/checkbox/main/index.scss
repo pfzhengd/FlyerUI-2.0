@@ -1,0 +1,73 @@
+@import "../../../styles/base/index.scss";
+@import '../../../styles/base/iconfont.scss';
+
+$checkbox-border-radius:$round-default-size !default;
+$checkbox-width:20px !default;
+$checkbox-height:20px !default;
+
+@include b("checkbox") {
+    user-select: none;
+    display:inline-flex;
+    box-sizing:border-box;
+    line-height:1.2;
+    vertical-align: middle;
+    &+& {
+        margin-left: 10px;
+    }
+    @include e("input-native") {
+        display: none;
+    }
+    @include e("input") {
+        border: 1px solid $color-border;
+        width: $checkbox-width;
+        height: $checkbox-height;
+        background-color: $common-white;
+        box-sizing:border-box;
+        position: relative;
+        font-family: 'fly-icons';
+        border-radius: $checkbox-border-radius;
+        cursor: pointer;
+        &:hover,&:focus{
+            border-color:$primary;
+        }
+        &::after {
+            content: '';
+            font-size:16px;
+            display:block;
+            position: absolute;
+            z-index:1;
+            top:-1px;
+            left:1px;
+        }
+        @include state("checked") {
+            &::after {
+                content: '\e644';
+            }
+            font-weight: bold;
+            color:$common-white;
+            background: $primary;
+            border-color:$primary;
+        }
+        @include state("disabled"){
+            color:$font-color-placeholder;
+            background:$color-border;
+            border-color:$color-border;
+            cursor:not-allowed;
+        }
+        @include state("indeterminate"){
+            &::after{
+                content:'\e696'
+            }
+            font-weight: bold;
+            color:$common-white;
+            background: $primary;
+            border-color:$primary;
+        }
+    }
+    @include e("label"){
+        padding-left:$default-padding;
+        @include state(disabled){
+            cursor: not-allowed;
+        }
+    }
+}

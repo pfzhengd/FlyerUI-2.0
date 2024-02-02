@@ -35,7 +35,7 @@
                  'is-append':$slots.append,
                  'is-round':isRound
                }]"
-      :value="value"
+      :value="modelValue"
       :disabled="disabled"
       :readonly="readonly"
       :maxlength="maxLength"
@@ -82,7 +82,7 @@
 export default {
   name: 'FlyInput',
   props: {
-    value: {
+    modelValue: {
       type: String,
       default: ''
     },
@@ -148,7 +148,7 @@ export default {
   computed: {
     isShowClear: {
       get () {
-        return (this.value && this.value.length > 0) && (this.focused || this.hovering)
+        return (this.modelValue && this.modelValue.length > 0) && (this.focused || this.hovering)
       }
     },
     isShowPrefix: {
@@ -174,7 +174,7 @@ export default {
   },
   methods: {
     handleInput ($event) {
-      this.$emit('input', $event.target.value)
+      this.$emit('update:modelValue', $event.target.value)
     },
     handleClear ($event) {
       this.$emit('input', '')

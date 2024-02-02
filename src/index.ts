@@ -4,6 +4,7 @@ import Textarea from './components/textarea'
 import Input from './components/input'
 import Alert from './components/alert'
 import Card from './components/card'
+import Checkbox from './components/checkbox'
 import { version } from '../package.json'
 
 const components = [
@@ -12,7 +13,8 @@ const components = [
   Input,
   Alert,
   Card,
-  Textarea
+  Textarea,
+  Checkbox
 ]
 
 if (typeof window !== 'undefined' && window.Vue) {
