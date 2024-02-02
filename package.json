@@ -1,6 +1,6 @@
 {
   "name": "@flyer-ui/next",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "UI组件库",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
