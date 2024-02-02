@@ -30,6 +30,7 @@
   "files": [
     "lib"
   ],
+  "private": false,
   "keywords": [],
   "author": "Zofer",
   "license": "MIT",
