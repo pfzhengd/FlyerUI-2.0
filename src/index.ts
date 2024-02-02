@@ -1,5 +1,6 @@
 import Button from './components/button'
 import ButtonGroup from './components/button-group'
+import Textarea from './components/textarea'
 import Input from './components/input'
 import Alert from './components/alert'
 import Card from './components/card'
@@ -10,7 +11,8 @@ const components = [
   ButtonGroup,
   Input,
   Alert,
-  Card
+  Card,
+  Textarea
 ]
 
 if (typeof window !== 'undefined' && window.Vue) {

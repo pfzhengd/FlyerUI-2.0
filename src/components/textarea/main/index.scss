@@ -1,0 +1,21 @@
+
+@import "../../../styles/base/index.scss";
+@include b('textarea'){
+    position:relative;
+    @include e('native'){
+        outline:none;
+        border:0px;
+        overflow-y:auto;
+        border:1px solid $color-border;
+        border-radius: $round-default-size;
+        padding:$default-padding;
+        box-sizing: border-box;
+        @include state('disabled'){
+            background: rgba($color-border,0.5);
+            cursor:not-allowed;
+        }
+        &:focus{
+            border-color:$primary;
+        }
+    }
+}
