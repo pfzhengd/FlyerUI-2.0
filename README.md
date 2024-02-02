@@ -22,9 +22,9 @@ npm install @flyer-ui/next
 
 ```HTML
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/flyer-ui/lib/themes/index.css"> 
+<link rel="stylesheet" href="https://unpkg.com/browse/@flyer-ui/next/lib/index.css"> 
 <!-- 引入组件库 --> 
-<script src="https://unpkg.com/flyer-ui/lib/index.js"></script>
+<script src="https://unpkg.com/browse/@flyer-ui/next@0.0.3/lib/index.js"></script>
 ```
 建议使用 CDN 引入 Flyer-UI 的用户在链接地址上锁定版本，以免将来 Flyer-UI 升级时受到非兼容性更新的影响。锁定版本的方法请查看 unpkg.com。
 
@@ -33,15 +33,15 @@ npm install @flyer-ui/next
 在main.js中写入以下内容
 
 ```JS
-import Vue from 'vue'
+import {createApp} from 'vue'
 import App from './App'
-import FlyerUI from 'flyer-ui'
+import FlyerUI from '@flyer-ui/next'
 import 'flyer-ui/lib/themes/index.css'
 
-new Vue({
-el: '#app',
-render:h=>(App)
-})
+
+const app = createApp(App)
+app.use(FlyerUI)
+app.mount('#app')
 
 ```
 以上代码便完成了Flyer-UI的引入。需要注意的是，样式文件需要单独引入。
