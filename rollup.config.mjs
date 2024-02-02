@@ -19,14 +19,6 @@ import path from 'path'
 
 function getPlugins () {
   return [
-    vuePlugin(),
-    typescript({
-      exclude: 'node_modules/**',
-      typescript: ts
-    }),
-    resolve(),
-    commonjs(),
-    nodePolyfills(),
     alias({
       entries: [{
         find: '@src',
@@ -38,6 +30,14 @@ function getPlugins () {
       }
       ]
     }),
+    vuePlugin(),
+    typescript({
+      exclude: 'node_modules/**',
+      typescript: ts
+    }),
+    resolve(),
+    commonjs(),
+    nodePolyfills(),
     JSON(),
     rollupPostcss({
       extensions: ['.css', '.scss'],
